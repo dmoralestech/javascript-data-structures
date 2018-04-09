@@ -2,31 +2,26 @@
 
 function Stack(){
  this.memory = [];
- this.count = 0;
 
  this.push = (value) => {
    this.memory.push(value);
-   this.count++;
  }
 
  this.pop = () => {
-   if (this.count === 0) {
+   if (this.memory.length === 0) {
      return undefined;
    }
-   this.count--;
-   let value = this.memory[this.count];
-   delete this.memory[this.count];
-   return value;
+   return this.memory.pop();
   }
 
   this.peek = () => {
-    if (this.count === 0) {
+    if (this.memory.length === 0) {
       return undefined;
     }
-    return this.memory[this.count - 1];
+    return this.memory[this.memory.length - 1];
   }
 
   this.size = () => {
-    return this.count;
+    return this.memory.length;
   }
 }
