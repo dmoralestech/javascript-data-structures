@@ -24,7 +24,7 @@ function LinkedList() {
   this.insert = (value, index) => {
     var current = head;
     var node = new Node(value);
-    var i = 0;
+    var currentPosition = 0;
     
     if (index === 0) {
       node.next = current;
@@ -32,18 +32,24 @@ function LinkedList() {
     } else {
       var previous;
       
-      
+      for (var i = 0; i <= index; i++ ) {
+        previous = current;
+        current = current.next;
+      }
+      node.next = current;
+      previous.next = node; 
     }
-    
     length++;
     
+    return true;
   };
+  
   this.removeAt = (index) => {};
   this.remove = (value) => {};
   this.indexOf = (value) => {
     var current = head;
     
-    for (var i = 0; i < lenght; i++) {
+    for (var i = 0; i < length; i++) {
       if (current.value === value) {
         return i;
       } else {
