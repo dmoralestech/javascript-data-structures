@@ -24,9 +24,25 @@ function LinkedList() {
   this.insert = (value, index) => {};
   this.removeAt = (index) => {};
   this.remove = (value) => {};
-  this.indexOf = (value) => {};
+  this.indexOf = (value) => {
+    var current = head;
+    
+    for (var i = 0; i < lenght; i++) {
+      if (current === value) {
+        return i;
+      } else {
+        current = current.next;
+      }
+    }
+    
+    return -1;
+
+  };
+    
   this.isEmpty = () => {};
-  this.size = () => {};
+  this.size = () => {
+    return length;
+  };
   this.toString = () => {};
   this.print= () => {};
 }
