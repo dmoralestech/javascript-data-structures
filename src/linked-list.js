@@ -21,14 +21,30 @@ function LinkedList() {
     }
     length++;
   };
-  this.insert = (value, index) => {};
+  this.insert = (value, index) => {
+    var current = head;
+    var node = new Node(value);
+    var i = 0;
+    
+    if (index === 0) {
+      node.next = current;
+      head = node;
+    } else {
+      var previous;
+      
+      
+    }
+    
+    length++;
+    
+  };
   this.removeAt = (index) => {};
   this.remove = (value) => {};
   this.indexOf = (value) => {
     var current = head;
     
     for (var i = 0; i < lenght; i++) {
-      if (current === value) {
+      if (current.value === value) {
         return i;
       } else {
         current = current.next;
