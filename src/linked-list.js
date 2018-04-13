@@ -18,8 +18,10 @@ function LinkedList() {
       }
       current.next = node;
     }
+
     length++;
   };
+
   this.insert = (value, index) => {
     var current = head;
     var node = new Node(value);
@@ -47,6 +49,22 @@ function LinkedList() {
   };
 
   this.remove = (value) => {
+    "use strict";
+
+    var current = head;
+    var previous;
+
+    for (var i = 0; i < length; i++) {
+      if (current.value == value) {
+        previous.next = current.next;
+        return value;
+      } else {
+        previous = current;
+        current = current.next;
+      }
+    }
+
+    return null;
   };
 
   this.indexOf = (value) => {
@@ -76,12 +94,21 @@ function LinkedList() {
 
   this.print = () => {
     "use strict";
+
+    if (length === 0 ){
+      return;
+    }
+
     var current = head;
-    while (current.next) {
+    for (var i=0; i < length; i++){
       console.log(current.value);
       current = current.next;
     }
   };
+
+  this.head = () => {
+    return head;
+  }
 }
 
 var linkedList = new LinkedList();
@@ -91,8 +118,17 @@ linkedList.append("b");
 linkedList.append("c");
 linkedList.append("d");
 linkedList.append("e");
+linkedList.append("f");
+linkedList.append("g");
+console.log("size", linkedList.size());
+// linkedList.print();
 linkedList.insert("0", 1);
+console.log("size", linkedList.size());
 linkedList.print();
+// linkedList.remove("0");
+// linkedList.print();
 
-console.log(linkedList.indexOf("b"));
-console.log(linkedList.indexOf("a"));
+// console.log(linkedList.indexOf("b"));
+// console.log(linkedList.indexOf("a"));
+
+// console.log(linkedList);
