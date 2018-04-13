@@ -1,5 +1,5 @@
 function LinkedList() {
-  var Node = (value) => {
+  var Node = function (value) {
     this.value = value;
     this.next = null;
   };
@@ -75,5 +75,20 @@ function LinkedList() {
   };
 
   this.print = () => {
+    "use strict";
+    var current = head;
+    while (current.next) {
+      console.log(current.value);
+      current = current.next;
+    }
   };
 }
+
+var linkedList = new LinkedList();
+
+linkedList.append("a");
+linkedList.append("b");
+linkedList.append("c");
+linkedList.append("d");
+linkedList.append("e");
+linkedList.print();
