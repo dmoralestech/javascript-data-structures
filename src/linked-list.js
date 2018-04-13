@@ -31,7 +31,7 @@ function LinkedList() {
     } else {
       var previous;
 
-      for (var i = 0; i <= index; i++) {
+      for (var i = 0; i < index; i++) {
         previous = current;
         current = current.next;
       }
@@ -91,6 +91,7 @@ linkedList.append("b");
 linkedList.append("c");
 linkedList.append("d");
 linkedList.append("e");
+linkedList.insert("0", 1);
 linkedList.print();
 
 console.log(linkedList.indexOf("b"));
