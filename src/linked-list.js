@@ -52,11 +52,16 @@ function LinkedList() {
     "use strict";
 
     var current = head;
-    var previous;
+    var previous = head;
 
     for (var i = 0; i < length; i++) {
       if (current.value == value) {
-        previous.next = current.next;
+        if (i === 0) {
+          head = current.next
+        } else {
+          previous.next = current.next;
+        }
+        length--;
         return value;
       } else {
         previous = current;
@@ -95,12 +100,12 @@ function LinkedList() {
   this.print = () => {
     "use strict";
 
-    if (length === 0 ){
+    if (length === 0) {
       return;
     }
 
     var current = head;
-    for (var i=0; i < length; i++){
+    for (var i = 0; i < length; i++) {
       console.log(current.value);
       current = current.next;
     }
@@ -120,13 +125,16 @@ linkedList.append("d");
 linkedList.append("e");
 linkedList.append("f");
 linkedList.append("g");
-console.log("size", linkedList.size());
+
 // linkedList.print();
-linkedList.insert("0", 1);
+// linkedList.insert("0", 1);
+// console.log("size", linkedList.size());
+// linkedList.print();
+// linkedList.remove("0");
+linkedList.remove("a");
+linkedList.remove("c");
 console.log("size", linkedList.size());
 linkedList.print();
-// linkedList.remove("0");
-// linkedList.print();
 
 // console.log(linkedList.indexOf("b"));
 // console.log(linkedList.indexOf("a"));
