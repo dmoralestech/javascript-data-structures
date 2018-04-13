@@ -92,3 +92,6 @@ linkedList.append("c");
 linkedList.append("d");
 linkedList.append("e");
 linkedList.print();
+
+console.log(linkedList.indexOf("b"));
+console.log(linkedList.indexOf("a"));
