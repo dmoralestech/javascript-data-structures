@@ -116,6 +116,12 @@ function LinkedList() {
   }
 }
 
+function assert(condition, message) {
+  if (!condition) {
+    throw message || "Assertion failed";
+  }
+}
+
 var linkedList = new LinkedList();
 
 linkedList.append("a");
@@ -134,6 +140,7 @@ linkedList.append("g");
 linkedList.remove("a");
 linkedList.remove("c");
 console.log("size", linkedList.size());
+assert(linkedList.size() === 5);
 linkedList.print();
 
 // console.log(linkedList.indexOf("b"));
