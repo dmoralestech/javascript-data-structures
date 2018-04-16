@@ -46,6 +46,22 @@ function LinkedList() {
   };
 
   this.removeAt = (index) => {
+    "use strict";
+
+    var current = head;
+    var previous = head;
+
+    if (index === 0) {
+      head = current.next;
+    } else {
+      for (var i = 0; i <= index; i++) {
+        previous = current;
+        current = current.next;
+      }
+      previous.next = current.next;
+    }
+    length--;
+    return current.value;
   };
 
   this.remove = (value) => {
@@ -102,7 +118,7 @@ function LinkedList() {
     var current = head;
     var result = "";
 
-    while(current) {
+    while (current) {
       result += current.value + ",";
       current = current.next;
     }
