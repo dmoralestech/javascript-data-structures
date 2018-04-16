@@ -88,6 +88,8 @@ function LinkedList() {
   };
 
   this.isEmpty = () => {
+    "use strict";
+    return length === 0;
   };
 
   this.size = () => {
