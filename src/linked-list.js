@@ -95,6 +95,17 @@ function LinkedList() {
   };
 
   this.toString = () => {
+    "use strict";
+
+    var current = head;
+    var result = "";
+
+    while(current) {
+      result += current.value + ",";
+      current = current.next;
+    }
+
+    return result;
   };
 
   this.print = () => {
@@ -140,8 +151,10 @@ linkedList.append("g");
 linkedList.remove("a");
 linkedList.remove("c");
 console.log("size", linkedList.size());
-console.assert(linkedList.size() === 6);
+console.assert(linkedList.size() === 5);
 linkedList.print();
+
+console.log(linkedList.toString());
 
 // console.log(linkedList.indexOf("b"));
 // console.log(linkedList.indexOf("a"));
