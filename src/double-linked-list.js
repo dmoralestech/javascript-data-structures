@@ -7,4 +7,15 @@ function DoubleLinkedList() {
     this.next = null;
     this.value = null;
   }
+  
+  this.append = (value) => {
+  }
+  
+  this.insert = (value, index) => {
+  }
+  
+  this.removeAt = (index) => {
+  }
+  
+  
 }
