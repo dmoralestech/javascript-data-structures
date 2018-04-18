@@ -1,7 +1,11 @@
 
 function DoubleLinkedList() {
   "use strict";
-
+  
+  var head = null;
+  var tail = null;
+  var length = 0;
+  
   var Node = function(value) {
     this.previous = null;
     this.next = null;
@@ -9,6 +13,24 @@ function DoubleLinkedList() {
   }
   
   this.append = (value) => {
+    var node = new Node(value);   
+    if (head === null) {
+      head = node;
+      tail = node;
+    } else {
+      var current = head;
+      var previous;
+      while (current.next) {
+        previous = current;
+        current = current.next;
+      }
+      node.previous = previous; 
+      current.next = node;
+      tail = current;
+    }
+    
+    length++;
+    
   }
   
   this.insert = (value, index) => {
