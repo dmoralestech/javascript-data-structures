@@ -17,5 +17,20 @@ function DoubleLinkedList() {
   this.removeAt = (index) => {
   }
   
+  this.remove = (value) => {
+  }
   
+  this.indexOf = (value) => {
+  }
+  
+  this.isEmpty = () => {}
+  
+  this.size = () => {}
+  
+  this.toString = () => {}
+  
+  this.print = () => {}
+  
+  this.head = () => {}
+ 
 }
