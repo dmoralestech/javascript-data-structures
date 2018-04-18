@@ -18,7 +18,6 @@ function LinkedList() {
       }
       current.next = node;
     }
-
     length++;
   };
 
