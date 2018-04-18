@@ -19,7 +19,7 @@ function DoubleLinkedList() {
       tail = node;
     } else {
       var current = head;
-      var previous;
+      var previous = head;
       while (current.next) {
         previous = current;
         current = current.next;
@@ -28,12 +28,28 @@ function DoubleLinkedList() {
       current.next = node;
       tail = current;
     }
-    
     length++;
-    
   }
   
   this.insert = (value, index) => {
+    var node = new Node(value);   
+    if (index === 0) {
+      head = node;
+      tail = node;
+    } else {
+      var current = head;
+      var previous = head;
+      var i = 0;
+      while (i < index) {
+        previous = current;
+        current = current.next;
+        index++;
+      }
+      node.previous = previous; 
+      current.next = node;
+      tail = current;
+    }
+    length++;    
   }
   
   this.removeAt = (index) => {
