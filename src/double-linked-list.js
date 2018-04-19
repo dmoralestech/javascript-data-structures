@@ -45,9 +45,9 @@ function DoubleLinkedList() {
         current = current.next;
         i++;
       }
-      node.previous = previous; 
+      node.previous = current;
       current.next = node;
-      tail = current;
+      tail = node;
     }
     length++;    
   }
