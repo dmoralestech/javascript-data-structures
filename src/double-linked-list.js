@@ -43,7 +43,7 @@ function DoubleLinkedList() {
       while (i < index) {
         previous = current;
         current = current.next;
-        index++;
+        i++;
       }
       node.previous = previous; 
       current.next = node;
