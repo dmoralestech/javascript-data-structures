@@ -59,6 +59,18 @@ function DoubleLinkedList() {
   }
   
   this.indexOf = (value) => {
+    var current = head;
+
+    for (var i = 0; i < length; i++) {
+      if (current.value === value) {
+        return i;
+      } else {
+        current = current.next;
+      }
+    }
+
+    return -1;
+
   }
   
   this.isEmpty = () => {}
