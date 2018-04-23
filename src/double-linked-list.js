@@ -73,14 +73,24 @@ function DoubleLinkedList() {
 
   }
   
-  this.isEmpty = () => {}
+  this.isEmpty = () => {
+    return length === 0;
+  }
   
-  this.size = () => {}
+  this.size = () => {
+    return length;
+  }
   
   this.toString = () => {}
   
   this.print = () => {}
   
-  this.head = () => {}
+  this.head = () => {
+    return head;
+  }
+  
+  this.tail = () = {
+    return tail;
+  }
  
 }
