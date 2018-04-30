@@ -99,7 +99,7 @@ function DoubleLinkedList() {
     return head;
   }
   
-  this.tail = () = {
+  this.tail = () => {
     return tail;
   }
  
