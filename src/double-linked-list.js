@@ -81,7 +81,17 @@ function DoubleLinkedList() {
     return length;
   }
   
-  this.toString = () => {}
+  this.toString = () => {
+    var current = head;
+    var result = "";
+
+    while (current) {
+      result += current.value + ",";
+      current = current.next;
+    }
+
+    return result;
+  }
   
   this.print = () => {
     if (length === 0) {
