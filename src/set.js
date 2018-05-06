@@ -59,6 +59,21 @@ function Set() {
     });
 
     return resultSet;
+  }
 
+  this.difference = anotherSet => {
+    "use strict";
+
+    Object.keys(items).forEach( item => {
+      if (!anotherSet.has(item)) {
+        resultSet.append(item);
+      }
+    });
+
+    let resultSet = new Set();
+
+
+
+    return resultSet;
   }
 }
