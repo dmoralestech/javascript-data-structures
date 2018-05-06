@@ -19,7 +19,11 @@ function Set() {
       return false;
     } 
     
-    delete item[value];
+    delete items[value];
     return true;
+  }
+  
+  this.clear = () => {
+    items = {};
   }
 }
