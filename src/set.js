@@ -46,4 +46,19 @@ function Set() {
 
     return resultSet;
   };
+
+  this.intersection = anotherSet => {
+    "use strict";
+
+    let resultSet = new Set();
+
+    Object.keys(items).forEach( item => {
+      if (anotherSet.has(item)) {
+        resultSet.append(item);
+      }
+    });
+
+    return resultSet;
+
+  }
 }
