@@ -48,32 +48,45 @@ function Set() {
   };
 
   this.intersection = anotherSet => {
-    "use strict";
-
     let resultSet = new Set();
 
-    Object.keys(items).forEach( item => {
+    Object.keys(items).forEach(item => {
       if (anotherSet.has(item)) {
         resultSet.append(item);
       }
     });
 
     return resultSet;
-  }
+  };
 
   this.difference = anotherSet => {
-    "use strict";
+    let resultSet = new Set();
 
-    Object.keys(items).forEach( item => {
+    Object.keys(items).forEach(item => {
       if (!anotherSet.has(item)) {
         resultSet.append(item);
       }
     });
 
-    let resultSet = new Set();
-
-
-
     return resultSet;
+  };
+
+  this.subSet = anotherSet => {
+
+    if (anotherSet.size() > this.size()) {
+      return false;
+    }
+
+    let values = this.values();
+    let isSubset = true;
+
+    anotherSet.values().forEach( item => {
+      if (!items.has(item)) {
+        isSubset = false;
+        return;
+      }
+    });
+
+    return isSubset;
   }
 }
