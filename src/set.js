@@ -26,4 +26,8 @@ function Set() {
   this.clear = () => {
     items = {};
   }
+  
+  this.size = () => {
+    return Object.keys(items).length;
+  }
 }
