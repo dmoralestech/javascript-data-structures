@@ -1,6 +1,6 @@
 
 function Set() {
-  var items =  {};
+  let items =  {};
   
   this.has = (value) => {
     return items.hasOwnProperty(value);
@@ -29,5 +29,19 @@ function Set() {
   
   this.size = () => {
     return Object.keys(items).length;
+  }
+  
+  this.values = () => {
+    return Object.keys(items);
+  }
+  
+  this.union = (anotherSet) => {
+    let resultSet = new Set();
+    
+    Object.keys(items).forEach( item => { resultSet.add(item); });
+    Object.keys(anotherSet).forEach( item => { resultSet.add(item); });
+    
+    return resultSet;
+    
   }
 }
