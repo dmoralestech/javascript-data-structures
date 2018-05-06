@@ -13,4 +13,13 @@ function Set() {
     items[value] = value;
     return true;
   }
+  
+  this.remove = (value) => {
+    if (!this.has(value)) {
+      return false;
+    } 
+    
+    delete item[value];
+    return true;
+  }
 }
