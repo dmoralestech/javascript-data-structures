@@ -1,0 +1,4 @@
+function Dictionary() {
+  "use strict";
+
+}

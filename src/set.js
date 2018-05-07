@@ -72,7 +72,6 @@ function Set() {
   };
 
   this.subSet = anotherSet => {
-
     if (anotherSet.size() > this.size()) {
       return false;
     }
@@ -80,7 +79,7 @@ function Set() {
     let values = this.values();
     let isSubset = true;
 
-    anotherSet.values().forEach( item => {
+    anotherSet.values().forEach(item => {
       if (!items.has(item)) {
         isSubset = false;
         return;
@@ -88,5 +87,5 @@ function Set() {
     });
 
     return isSubset;
-  }
+  };
 }
