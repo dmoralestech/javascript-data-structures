@@ -18,5 +18,17 @@ function Dictionary() {
     return false;
   }
 
+  this.get = (key) => {
+    this.has(key) ? item[key] : null;
+  }
 
+  this.values = () => {
+    let values = [];
+    for (let k in items){
+      if (this.has(k)){
+        values.push(items[k]);
+      }
+    }
+    return values;
+  }
 }
